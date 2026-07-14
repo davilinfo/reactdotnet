@@ -11,7 +11,7 @@ export default async function Home() {
   let dataResult : WeatherForecast[] = new Array<WeatherForecast>();
 
   try{
-    var response = await fetch("http://localhost:5295/api/v1/weatherforecast");
+    const response = await fetch("http://localhost:5295/api/v1/weatherforecast");
     dataResult = await response.json();
   } catch (error) {
     console.error("Error fetching data:", error);
