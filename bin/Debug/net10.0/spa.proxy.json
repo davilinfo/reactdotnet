@@ -1,0 +1,8 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "http://localhost:44450",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "D:\\PoC\\reactdotnet\\reactdotnet\\ClientApp\\",
+"MaxTimeoutInSeconds": "120"
+}
+}
