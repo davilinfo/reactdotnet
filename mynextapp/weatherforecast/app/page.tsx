@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface WeatherForecast {
   date: string;
@@ -19,13 +20,14 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-16 px-16 bg-white dark:bg-black sm:items-start">
         <Image
           className="dark:invert"
           src="/next.svg"
           alt="Next.js logo"
           width={100}
           height={20}
+          padding-top={3}
           priority
         />
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
@@ -51,12 +53,15 @@ export default async function Home() {
           </p>
           <div>
             Weather Forecast Data:{" "}
+            <br />
             {dataResult && dataResult.length > 0 ? ( dataResult.map((item, index) => (
-              <div key={index} className="text-sm text-zinc-700 dark:text-zinc-300" style={{ backgroundColor: '#d4c7c7', padding: '10px', marginBottom: '10px', borderRadius: '5px' }}>
-                <p>Date: {item.date}</p>
-                <p>TemperatureC: {item.temperatureC}</p>
-                <p>TemperatureF: {item.temperatureF}</p>
-                <p>Summary: {item.summary}</p>
+              <div key={index} style={{ display: 'inline-grid', marginBottom: '10px', marginRight: '10px' }}>
+                <div className="text-sm text-zinc-700 dark:text-zinc-300" style={{ backgroundColor: '#d4c7c7', padding: '10px', marginBottom: '10px', borderRadius: '5px' }}>
+                  <p>Date: {item.date}</p>
+                  <p>TemperatureC: {item.temperatureC}</p>
+                  <p>TemperatureF: {item.temperatureF}</p>
+                  <p>Summary: {item.summary}</p>
+                </div>
               </div>
             ))
             ) : (
